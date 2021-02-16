@@ -1,0 +1,28 @@
+{
+  "name": "dictionary-web",
+  "version": "1.0.0",
+  "description": "Simple Dictionary Application ",
+  "main": "server.js",
+  "author": "Bebek",
+  "license": "MIT",
+  "scripts": {
+    "client-install": "npm install --prefix client",
+    "start": "node server.js",
+    "server": "nodemon server.js",
+    "client": "npm start --prefix client",
+    "dev": "concurrently \"npm run server\" \"npm run client\"",
+    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix client && npm run build --prefix client"
+  },
+  "dependencies": {
+    "axios": "^0.18.0",
+    "bluebird": "^3.5.1",
+    "concurrently": "^3.5.1",
+    "express": "^4.16.3",
+    "lodash": "^4.17.10",
+    "sqlite": "^2.9.2"
+  },
+  "devDependencies": {
+    "babel-plugin-transform-object-rest-spread": "^6.26.0",
+    "nodemon": "^1.17.5"
+  }
+}
